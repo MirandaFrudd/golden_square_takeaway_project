@@ -145,7 +145,7 @@ order = double (:order, full_order: [{"salad" => {"price" => 9, "number selected
 
 expect(takaway.view_order).to eq("Salad - £9\nSalad - £9")
 
-# 3 - As a customer, return my receipt
+# 3 - As a customer, return my receipt DONE
 takeaway = Takeaway.new(order, menu)
 
 menu = double (:menu, initialize: {"salad" => {"price" => 9, "number selected" => 0})
@@ -163,7 +163,7 @@ takeaway.receipt # => "Salad - £9\nSalad - £9\nTOTAL = £18"
 
 # Menu unit tests
 
-# 1 - returns a formatted menu
+# 1 - returns a formatted menu DONE
 
 menu = Menu.new({"salad" => {"price" => 9, "number selected" => 0}, "burger" => {"price" => 12, "number selected" => 0}, "pasta" => {"price" => 11, "number selected" => 0}, "pizza" => {"price" => 12, "number selected" => 0}})
 
