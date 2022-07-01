@@ -14,5 +14,13 @@ RSpec.describe Menu do
             menu.select("pizza")
             expect(menu.selected).to eq "Salad - £9\nPizza - £12\nPizza - £12\n"
         end
+
+        it "totals the chosen menu items" do
+            menu = Menu.new({"salad" => {"price" => 9, "number selected" => 0}, "burger" => {"price" => 12, "number selected" => 0}, "pasta" => {"price" => 11, "number selected" => 0}, "pizza" => {"price" => 12, "number selected" => 0}})
+            menu.select("pizza")
+            menu.select("salad")
+            menu.select("pizza")
+            expect(menu.receipt_total).to eq 33
+        end
     end
 end

@@ -87,14 +87,15 @@ end
 
 # Takeaway integration
 
-# 1 - As a customer, return the full menu with dishes and price
+# 1 - As a customer, return the full menu with dishes and price - DONE
+
 takeaway = Takeaway.new(order, menu)
 
 menu = Menu.new({"salad" => {"price" => 9, "number selected" => 0}, "burger" => {"price" => 12, "number selected" => 0}, "pasta" => {"price" => 11, "number selected" => 0}, "pizza" => {"price" => 12, "number selected" => 0}})
 
 takeaway.full_menu # => "Salad - £9\nBurger - £12\nPasta - £11\nPizza - £12\n"
 
-# 2 - As a customer, return my full order
+# 2 - As a customer, return my full order DONE
 takeaway = Takeaway.new(order, menu)
 
 menu = Menu.new({"salad" => {"price" => 9, "number selected" => 0}, "burger" => {"price" => 12, "number selected" => 0}, "pasta" => {"price" => 11, "number selected" => 0}, "pizza" => {"price" => 12, "number selected" => 0}})
@@ -125,14 +126,14 @@ takeaway.receipt => takeaway.full_order # => "Pasta - £11\nPizza - £12\nPizza 
 
 # Takeaway Unit Testing
 
-# 1 - As a customer, return the full menu with dishes and price
+# 1 - As a customer, return the full menu with dishes and price DONE
 takeaway = Takeaway.new(order, menu)
 
 menu = double (:menu, initialize: {"salad" => {"price" => 9, "number selected" => 0})
 
 expect(takeaway.full_menu).to eq "Salad - £9\n"
 
-# 2 - As a customer, return my full order
+# 2 - As a customer, return my full order DONE
 takeaway = Takeaway.new(order, menu)
 
 menu = double (:menu, initialize: {"salad" => {"price" => 9, "number selected" => 0})

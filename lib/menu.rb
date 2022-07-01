@@ -32,5 +32,13 @@ class Menu
         end
         return selected_formatted
     end
+
+    def receipt_total
+        @total = 0
+        @menu.each do | dish, hash |
+            @total += (hash["price"] * hash["number selected"])
+        end
+        return @total
+    end
 end
 
